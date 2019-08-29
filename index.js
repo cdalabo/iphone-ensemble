@@ -51,7 +51,7 @@ app.post('/postChat', (req, res) => {
 
 async function loadChannelId()  {
     const channels = await web.conversations.list();
-    const channel = channels.channels.find(c => c.name === 'iphone_ensemble_performancechannel');
+    const channel = channels.channels.find(c => c.name === 'iphone-ensemble-performance');
     gChannelId = channel.id;
     console.log('iPhone Ensemble Performance Channel ID:', gChannelId);
 }
