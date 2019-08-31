@@ -2,6 +2,7 @@ require('dotenv').config();
 const fs = require('fs');;
 const { WebClient } = require('@slack/web-api');
 const token = process.env.SLACK_TOKEN;
+const ip = require('ip');
 
 if (!token) {
   console.error();
@@ -59,5 +60,6 @@ async function loadChannelId()  {
 loadChannelId();
 app.listen(port, () => {
   console.log(`Open the webpage at http://localhost:${port}.`);
+  console.log(`On another computer use  http://${ip.address()}:${port}.`);
   console.log(`(You can hold the Command key to click this link in the Terminal.)`);
-})
+});
